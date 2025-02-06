@@ -1,0 +1,18 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+log/
+debug.log
+
+# Heroku
+.heroku/
+
+# Build files
+client/build/
