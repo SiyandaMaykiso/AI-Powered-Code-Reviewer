@@ -1,0 +1,47 @@
+.
+├── Procfile
+├── README.md
+├── client
+│   ├── README.md
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   │   └── vite.svg
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── AppRouter.jsx
+│   │   ├── api.js
+│   │   ├── assets
+│   │   │   └── react.svg
+│   │   ├── components
+│   │   │   ├── CodeInput.js
+│   │   │   ├── CodeReviewApp.jsx
+│   │   │   ├── CodeReviewDisplay.js
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── ReviewHistory.js
+│   │   ├── index.css
+│   │   └── main.jsx
+│   └── vite.config.js
+├── config
+│   └── db.js
+├── controllers
+│   ├── authController.js
+│   └── codeReviewController.js
+├── index.js
+├── middlewares
+│   └── authMiddleware.js
+├── models
+│   ├── CodeReview.js
+│   └── User.js
+├── package-lock.json
+├── package.json
+├── project-structure.txt
+└── routes
+    ├── authRoutes.js
+    └── codeReviewRoutes.js
+
+11 directories, 34 files
