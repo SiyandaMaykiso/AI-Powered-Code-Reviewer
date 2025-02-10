@@ -3,43 +3,51 @@ const CodeReview = require('../models/CodeReview');
 
 exports.reviewCode = async (req, res) => {
     try {
-        const { codeSnippet } = req.body;
-        if (!codeSnippet) {
+        const { code } = req.body;
+        if (!code) {
             return res.status(400).json({ error: 'Code snippet is required for review.' });
         }
 
         // Store user input
         const savedCode = await CodeReview.create({
             userId: req.user.id,
-            code: codeSnippet,
+            code: code,
             review: null, 
         });
 
-        // Call OpenAI API for code review
-        const response = await axios.post(
-            'https://api.openai.com/v1/chat/completions',
+// Call OpenAI API for code review with structured response format
+const response = await axios.post(
+    'https://api.openai.com/v1/chat/completions',
+    {
+        model: 'gpt-4',
+        messages: [
             {
-                model: 'gpt-4',
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are an AI that reviews code and suggests improvements, security fixes, and best practices.',
-                    },
-                    {
-                        role: 'user',
-                        content: `Review the following code:\n\n${codeSnippet}`,
-                    },
-                ],
-                max_tokens: 500,
-                temperature: 0.5,
+                role: 'system',
+                content:
+                "You are an expert code reviewer. Provide structured feedback in exactly three sections, each separated by a blank line:\n\n" +
+                "**Issue Found:**\n" +
+                "- **Line:** Specify the exact line of code with the issue.\n" +
+                "- **Problem:** Provide a one-sentence description of the issue.\n\n" +
+                "**Suggested Fix:**\n" +
+                "- Show only the corrected code snippet.\n\n" +
+                "**Best Practices:**\n" +
+                "- Provide a single, concise best practice relevant to the issue."
             },
             {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-                },
+                role: 'user',
+                content: `Analyze the following code and provide improvements:\n\n${code}`
             }
-        );
+        ],
+        max_tokens: 500,
+        temperature: 0.5,
+    },
+    {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        },
+    }
+);
 
         const review = response.data.choices[0].message.content.trim();
 
