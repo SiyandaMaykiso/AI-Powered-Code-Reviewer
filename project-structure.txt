@@ -17,14 +17,17 @@
 │   │   ├── assets
 │   │   │   └── react.svg
 │   │   ├── components
-│   │   │   ├── CodeInput.js
+│   │   │   ├── CodeInput.jsx
 │   │   │   ├── CodeReviewApp.jsx
-│   │   │   ├── CodeReviewDisplay.js
+│   │   │   ├── CodeReviewDisplay.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Home.jsx
 │   │   │   ├── Login.jsx
 │   │   │   ├── Register.jsx
-│   │   │   └── ReviewHistory.js
+│   │   │   └── ReviewHistory.jsx
 │   │   ├── index.css
-│   │   └── main.jsx
+│   │   ├── main.jsx
+│   │   └── theme.js
 │   └── vite.config.js
 ├── config
 │   └── db.js
@@ -44,4 +47,4 @@
     ├── authRoutes.js
     └── codeReviewRoutes.js
 
-11 directories, 34 files
+11 directories, 37 files

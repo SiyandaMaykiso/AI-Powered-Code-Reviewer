@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppRouter from "./AppRouter.jsx";
+import App from "./App.jsx";
 import "./index.css";
+import "./App.css"; // Ensure styles are globally applied
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <AppRouter />
+        <App />
     </React.StrictMode>
 );

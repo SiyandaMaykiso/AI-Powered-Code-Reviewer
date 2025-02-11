@@ -12,17 +12,22 @@ const Register = () => {
         e.preventDefault();
         setError(null);
 
-        const response = await registerUser(username, password);
-        if (response.error) {
-            setError(response.error);
-        } else {
-            navigate("/login");
+        try {
+            const response = await registerUser(username, password);
+            if (response.error) {
+                setError(response.error);
+            } else {
+                localStorage.setItem("token", response.token); // Store token
+                navigate("/app"); // Redirect to main app after successful registration
+            }
+        } catch (err) {
+            setError("Registration failed. Please try again.");
         }
     };
 
     return (
         <div>
-            <h2>Register</h2>
+            <h2></h2>
             {error && <p style={{ color: "red" }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <input 
