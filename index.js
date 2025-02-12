@@ -10,13 +10,30 @@ dotenv.config();
 
 const app = express();
 
-// CORS setup
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
+// ✅ CORS Setup - Allow multiple origins (local development & production)
+const allowedOrigins = [
+    'http://localhost:5173',  // Frontend running on Vite
+    'http://localhost:3000',  // Alternative local frontend
+    process.env.FRONTEND_URL  // Production frontend (if deployed)
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true, // Allows cookies if needed
+    optionsSuccessStatus: 200
+}));
+
 app.use(bodyParser.json());
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
-const codeReviewRoutes = require('./routes/codeReviewRoutes'); // New route
+const codeReviewRoutes = require('./routes/codeReviewRoutes');
 
 // Use routes
 app.use('/api/auth', authRoutes);
@@ -42,9 +59,9 @@ sequelize
     .then(() => {
         const PORT = process.env.PORT || 3001;
         app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`);
+            console.log(` Server is running on port ${PORT}`);
         });
     })
     .catch((err) => {
-        console.error('Unable to connect to the database:', err.message);
+        console.error(' Unable to connect to the database:', err.message);
     });

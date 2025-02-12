@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -10,6 +10,12 @@ import ReviewHistory from "./components/ReviewHistory";
 
 const AppRouter = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // ✅ Check localStorage on load
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token); // Convert token existence to boolean
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -25,8 +31,16 @@ const AppRouter = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/review" element={<CodeReviewApp />} />
-          <Route path="/history" element={<ReviewHistory />} />
+
+          {/* ✅ Protected Routes: Redirect if not logged in */}
+          <Route
+            path="/review"
+            element={isAuthenticated ? <CodeReviewApp /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/history"
+            element={isAuthenticated ? <ReviewHistory /> : <Navigate to="/login" />}
+          />
         </Routes>
       </Box>
     </Router>

@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
     return (
         <footer style={styles.footer}>
-            <p>&copy; {new Date().getFullYear()} AI-Powered Code Reviewer.Created by Siyanda Burnham. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AI-Powered Code Reviewer. Created by Siyanda Burnham. All rights reserved.</p>
         </footer>
     );
 };

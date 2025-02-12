@@ -9,18 +9,25 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null); // Reset error state
+
     try {
-      const response = await loginUser(credentials);
-      localStorage.setItem("token", response.token);
-      navigate("/app"); // Redirect to the main app page
+      const response = await loginUser(credentials.username, credentials.password);
+
+      if (response.token) {
+        localStorage.setItem("token", response.token); // ✅ Ensure the token exists before storing
+        navigate("/review"); // ✅ Redirect to main app page
+      } else {
+        setError(response.error || "Invalid credentials. Please try again.");
+      }
     } catch (err) {
-      setError("Invalid credentials. Please try again.");
+      setError("Error connecting to server. Please try again.");
     }
   };
 
   return (
     <div>
-      <h2></h2>
+      <h2>Login</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
@@ -28,12 +35,14 @@ const Login = () => {
           placeholder="Username"
           value={credentials.username}
           onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+          required
         />
         <input
           type="password"
           placeholder="Password"
           value={credentials.password}
           onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+          required
         />
         <button type="submit">Login</button>
       </form>
