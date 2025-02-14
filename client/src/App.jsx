@@ -1,14 +1,21 @@
-import React from "react";
-import { ThemeProvider, CssBaseline, Box } from "@mui/material";
-import { lightTheme } from "./theme";
+import React, { useState } from "react";
+import { ThemeProvider, CssBaseline, Box, createTheme } from "@mui/material";
+import { lightTheme, darkTheme } from "./theme";
 import AppRouter from "./AppRouter";
-import Footer from "./components/Footer"; // ✅ Import Footer globally
+import Footer from "./components/Footer";
 
 const App = () => {
+  const [mode, setMode] = useState("light");
+
+  const toggleTheme = () => {
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  };
+
+  const theme = createTheme(mode === "light" ? lightTheme : darkTheme);
+
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/* Ensures content fills the screen while keeping the footer at the bottom */}
       <Box 
         sx={{ 
           display: "flex", 
@@ -16,12 +23,9 @@ const App = () => {
           minHeight: "100vh" 
         }}
       >
-        {/* Main Content */}
         <Box sx={{ flex: "1" }}>
-          <AppRouter />
+          <AppRouter toggleTheme={toggleTheme} />
         </Box>
-
-        {/* Global Footer - Visible on all pages */}
         <Footer />
       </Box>
     </ThemeProvider>
