@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "vite",
-    "heroku-postbuild": "npm install --include=dev && npm run build"
+    "heroku-postbuild": "npm ci && npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
