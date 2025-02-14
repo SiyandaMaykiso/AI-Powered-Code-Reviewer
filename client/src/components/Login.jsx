@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
+import { useAuth } from "../context/AuthContext"; // ✅ Import useAuth
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { login } = useAuth(); // ✅ Use login from context
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ const Login = () => {
       const response = await loginUser(credentials.username, credentials.password);
 
       if (response.token) {
-        localStorage.setItem("token", response.token); // ✅ Ensure the token exists before storing
+        login(response.token); // ✅ Use context login
         navigate("/review"); // ✅ Redirect to main app page
       } else {
         setError(response.error || "Invalid credentials. Please try again.");

@@ -41,7 +41,7 @@ export const submitCodeForReview = async (code, token) => {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
             },
-            body: JSON.stringify({ code }),
+            body: JSON.stringify({ code }),  // Ensure correct JSON body format
         });
 
         if (!response.ok) {

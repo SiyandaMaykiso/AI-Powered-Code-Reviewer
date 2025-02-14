@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { submitCodeForReview } from "../api";
+import { CircularProgress, Box, Button, TextField, Typography } from "@mui/material";
 
 const CodeInput = ({ setReview }) => {
     const [code, setCode] = useState("");
@@ -41,20 +42,47 @@ const CodeInput = ({ setReview }) => {
     };
 
     return (
-        <div className="code-input-container">
-            <h2>Submit Code for Review</h2>
-            <textarea
-                rows="5"
+        <Box sx={{ maxWidth: "600px", margin: "auto", textAlign: "center", mt: 4 }}>
+            <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, color: "#1565c0" }}>
+                Submit Code for Review
+            </Typography>
+
+            <TextField
+                fullWidth
+                multiline
+                rows={5}
                 placeholder="Paste your code here..."
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
-                className="code-textarea"
+                variant="outlined"
+                sx={{ mb: 2, backgroundColor: "#f9f9f9", borderRadius: "5px" }}
             />
-            <button onClick={handleSubmit} disabled={loading} className="submit-button">
-                {loading ? "Reviewing..." : "Submit Code"}
-            </button>
-            {error && <p className="error-message">{error}</p>}
-        </div>
+
+            <Box sx={{ position: "relative", display: "inline-block" }}>
+                <Button
+                    variant="contained"
+                    sx={{ backgroundColor: "#1565c0", color: "#fff", px: 3 }}
+                    onClick={handleSubmit}
+                    disabled={loading}
+                >
+                    {loading ? "Processing..." : "Submit Code"}
+                </Button>
+                {loading && (
+                    <CircularProgress
+                        size={24}
+                        sx={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                            marginTop: "-12px",
+                            marginLeft: "-12px",
+                        }}
+                    />
+                )}
+            </Box>
+
+            {error && <Typography sx={{ color: "red", mt: 2 }}>{error}</Typography>}
+        </Box>
     );
 };
 

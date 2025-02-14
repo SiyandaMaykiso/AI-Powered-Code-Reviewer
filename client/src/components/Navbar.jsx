@@ -1,13 +1,15 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // ✅ Import AuthContext
 
-const Navbar = ({ onLogout }) => {
+const Navbar = () => {
   const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth(); // ✅ Use context
 
   const handleLogout = () => {
-    onLogout();
-    navigate("/login");
+    logout();
+    navigate("/");
   };
 
   return (
@@ -40,15 +42,24 @@ const Navbar = ({ onLogout }) => {
           <Button color="inherit" component={Link} to="/">
             Home
           </Button>
-          <Button color="inherit" component={Link} to="/review">
-            Review
-          </Button>
-          <Button color="inherit" component={Link} to="/history">
-            History
-          </Button>
-          <Button color="inherit" onClick={handleLogout}>
-            Logout
-          </Button>
+          {isAuthenticated && (
+            <>
+              <Button color="inherit" component={Link} to="/review">
+                Review
+              </Button>
+              <Button color="inherit" component={Link} to="/history">
+                History
+              </Button>
+              <Button color="inherit" onClick={handleLogout}>
+                Logout
+              </Button>
+            </>
+          )}
+          {!isAuthenticated && (
+            <Button color="inherit" component={Link} to="/login">
+              Login
+            </Button>
+          )}
         </Box>
       </Toolbar>
     </AppBar>

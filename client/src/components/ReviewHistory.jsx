@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { getReviewHistory } from "../api";
-import { Box, Card, CardContent, CircularProgress, Typography, Grid } from "@mui/material";
+import { Box, Card, CardContent, CircularProgress, Typography, Grid, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const ReviewHistory = () => {
     const [history, setHistory] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchHistory = async () => {
@@ -37,6 +39,16 @@ const ReviewHistory = () => {
 
     return (
         <Box sx={{ maxWidth: "800px", margin: "auto", padding: "20px" }}>
+            <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 2 }}>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => navigate("/review")}
+                >
+                    Return to Review
+                </Button>
+            </Box>
+
             <Typography variant="h4" sx={{ fontWeight: "bold", color: "#1565c0", mb: 3, textAlign: "center" }}>
                 Review History
             </Typography>

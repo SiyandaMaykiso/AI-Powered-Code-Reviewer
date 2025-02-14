@@ -23,8 +23,11 @@
 │   │   │   ├── Footer.jsx
 │   │   │   ├── Home.jsx
 │   │   │   ├── Login.jsx
+│   │   │   ├── Navbar.jsx
 │   │   │   ├── Register.jsx
 │   │   │   └── ReviewHistory.jsx
+│   │   ├── context
+│   │   │   └── AuthContext.jsx
 │   │   ├── index.css
 │   │   ├── main.jsx
 │   │   └── theme.js
@@ -47,4 +50,4 @@
     ├── authRoutes.js
     └── codeReviewRoutes.js
 
-11 directories, 37 files
+12 directories, 39 files
