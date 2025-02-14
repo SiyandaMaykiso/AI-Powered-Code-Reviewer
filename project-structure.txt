@@ -3,11 +3,19 @@
 ├── README.md
 ├── client
 │   ├── README.md
+│   ├── build
+│   │   ├── assets
+│   │   │   ├── index-6LbeadP6.css
+│   │   │   └── index-CrXuPyjU.js
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   └── vite.svg
 │   ├── eslint.config.js
 │   ├── index.html
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── public
+│   │   ├── favicon.ico
 │   │   └── vite.svg
 │   ├── src
 │   │   ├── App.css
@@ -50,4 +58,4 @@
     ├── authRoutes.js
     └── codeReviewRoutes.js
 
-12 directories, 39 files
+14 directories, 45 files

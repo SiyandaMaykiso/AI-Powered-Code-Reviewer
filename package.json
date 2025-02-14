@@ -7,11 +7,12 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "engines": {
-    "node": "20.18.2",
-    "npm": "10.9.2"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "keywords": [],
   "author": "",
