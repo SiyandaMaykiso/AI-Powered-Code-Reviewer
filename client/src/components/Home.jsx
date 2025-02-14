@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, Card, CardContent, Grid, Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
 import { useAuth } from "../context/AuthContext";
 import { loginUser, registerUser } from "../api";
 
@@ -66,10 +65,6 @@ const Home = () => {
           </Card>
         </Grid>
       </Grid>
-
-      <Box sx={{ width: "100%", mt: 4 }}>
-        <Footer />
-      </Box>
     </Box>
   );
 };
