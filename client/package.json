@@ -9,8 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite",
-    "heroku-postbuild": "npm ci && npm run build"
+    "start": "vite"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -20,7 +19,8 @@
     "dotenv": "^16.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "vite": "^6.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
@@ -31,8 +31,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
-    "globals": "^15.14.0",
-    "vite": "^6.1.0"
+    "globals": "^15.14.0"
   },
   "static.json": {
     "root": "client/build/",
