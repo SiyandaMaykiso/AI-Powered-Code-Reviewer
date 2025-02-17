@@ -62,10 +62,7 @@ const Navbar = () => {
               <Button color="inherit" onClick={handleLogout} sx={{ '&:hover': { backgroundColor: darkMode ? "#333" : "#0d47a1", color: "#fff" } }}>Logout</Button>
             </>
           )}
-          {!isAuthenticated && (
-            <Button color="inherit" component={Link} to="/login" sx={{ '&:hover': { backgroundColor: darkMode ? "#333" : "#0d47a1", color: "#fff" } }}>Login</Button>
-          )}
-        </Box>
+               </Box>
       </Toolbar>
     </AppBar>
   );
