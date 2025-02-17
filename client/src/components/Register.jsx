@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { registerUser } from "../api";
 import { useNavigate } from "react-router-dom";
 
+
 const Register = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ const Register = () => {
 
     return (
         <div>
-            <h2></h2>
+            <h2>Register</h2>
             {error && <p style={{ color: "red" }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <input 

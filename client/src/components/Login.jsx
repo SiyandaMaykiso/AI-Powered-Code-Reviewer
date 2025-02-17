@@ -14,13 +14,24 @@ const Login = () => {
     setError(null); // Reset error state
 
     try {
-      const response = await loginUser(credentials.username, credentials.password);
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${apiUrl}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: credentials.username,
+          password: credentials.password
+        }),
+        credentials: 'include'
+      });
 
-      if (response.token) {
-        login(response.token); // ✅ Use context login
+      const data = await response.json();
+
+      if (data.token) {
+        login(data.token); // ✅ Use context login
         navigate("/review"); // ✅ Redirect to main app page
       } else {
-        setError(response.error || "Invalid credentials. Please try again.");
+        setError(data.error || "Invalid credentials. Please try again.");
       }
     } catch (err) {
       setError("Error connecting to server. Please try again.");
