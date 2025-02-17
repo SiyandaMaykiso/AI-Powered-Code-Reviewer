@@ -12,11 +12,12 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com'
+    'https://ai-powered-code-reviewer.herokuapp.com'
 ];
 
 app.use(cors({
     origin: function (origin, callback) {
+        console.log("Request Origin:", origin);
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
