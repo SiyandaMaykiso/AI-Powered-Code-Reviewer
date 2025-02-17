@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'build',
     assetsDir: 'assets',
-    manifest: true, // Ensure the manifest is generated
+    manifest: true, 
   },
   resolve: {
     alias: {

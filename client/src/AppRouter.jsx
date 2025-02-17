@@ -7,10 +7,10 @@ import CodeReviewApp from "./components/CodeReviewApp";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ReviewHistory from "./components/ReviewHistory";
-import { useAuth } from "./context/AuthContext"; // ✅ Import AuthContext
+import { useAuth } from "./context/AuthContext"; 
 
 const AppRouter = () => {
-  const { isAuthenticated, logout } = useAuth(); // ✅ Use context for auth state and logout
+  const { isAuthenticated, logout } = useAuth(); 
 
   return (
     <Router>

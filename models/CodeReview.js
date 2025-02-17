@@ -12,7 +12,7 @@ const CodeReview = sequelize.define('CodeReview', {
     },
     review: {
         type: DataTypes.TEXT,
-        allowNull: true, // AI-generated review
+        allowNull: true, 
     },
 });
 

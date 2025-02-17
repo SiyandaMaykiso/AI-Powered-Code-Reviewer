@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
-import { useAuth } from "../context/AuthContext"; // ✅ Import useAuth
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ username: "", password: "" });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const { login } = useAuth(); // ✅ Use login from context
+  const { login } = useAuth(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null); // Reset error state
+    setError(null); 
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
@@ -28,8 +28,8 @@ const Login = () => {
       const data = await response.json();
 
       if (data.token) {
-        login(data.token); // ✅ Use context login
-        navigate("/review"); // ✅ Redirect to main app page
+        login(data.token); 
+        navigate("/review"); 
       } else {
         setError(data.error || "Invalid credentials. Please try again.");
       }

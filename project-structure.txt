@@ -6,7 +6,7 @@
 │   ├── build
 │   │   ├── assets
 │   │   │   ├── index-6LbeadP6.css
-│   │   │   └── index-CrXuPyjU.js
+│   │   │   └── index-BXg5epTN.js
 │   │   ├── favicon.ico
 │   │   ├── index.html
 │   │   └── vite.svg

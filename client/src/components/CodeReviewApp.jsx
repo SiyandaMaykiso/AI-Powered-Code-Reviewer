@@ -6,7 +6,7 @@ import CodeReviewDisplay from "./CodeReviewDisplay";
 
 const CodeReviewApp = () => {
     const [review, setReview] = useState(null);
-    const navigate = useNavigate();  // ✅ Hook to handle navigation
+    const navigate = useNavigate(); 
 
     return (
         <div>
@@ -19,7 +19,7 @@ const CodeReviewApp = () => {
                         <Button
                             variant="contained"
                             color="primary"
-                            onClick={() => navigate("/history")}  // ✅ Navigates to history
+                            onClick={() => navigate("/history")}  
                         >
                             View History
                         </Button>

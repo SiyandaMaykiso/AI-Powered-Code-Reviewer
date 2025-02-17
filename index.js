@@ -8,24 +8,24 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Simplified CORS Setup
+
 app.use(cors({
     origin: 'https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com',
     credentials: true
 }));
 
-// ✅ Use express.json() for JSON parsing
+
 app.use(express.json());
 
-// Import routes
+
 const authRoutes = require('./routes/authRoutes');
 const codeReviewRoutes = require('./routes/codeReviewRoutes');
 
-// Use routes
+
 app.use('/api/auth', authRoutes);
 app.use('/api/review', codeReviewRoutes);
 
-// Serve frontend build files
+
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/', (req, res) => {

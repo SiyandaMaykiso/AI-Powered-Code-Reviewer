@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
-    document.body.style.backgroundColor = darkMode ? "#f5f5f5" : "#1e1e1e"; // Slightly lighter than black
+    document.body.style.backgroundColor = darkMode ? "#f5f5f5" : "#1e1e1e"; 
     document.body.style.color = darkMode ? "#000" : "#fff";
   };
 

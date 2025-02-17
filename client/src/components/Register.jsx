@@ -18,8 +18,8 @@ const Register = () => {
             if (response.error) {
                 setError(response.error);
             } else {
-                localStorage.setItem("token", response.token); // Store token
-                navigate("/review"); // Redirect to main app after successful registration
+                localStorage.setItem("token", response.token); 
+                navigate("/review"); 
             }
         } catch (err) {
             setError("Registration failed. Please try again.");
