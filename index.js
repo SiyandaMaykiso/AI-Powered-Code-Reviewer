@@ -8,25 +8,10 @@ dotenv.config();
 
 const app = express();
 
-// ✅ CORS Setup
-const allowedOrigins = [
-    'http://localhost:5173',
-    'http://localhost:3000',
-    'https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com'
-];
-
+// ✅ Simplified CORS Setup
 app.use(cors({
-    origin: function (origin, callback) {
-        console.log("Request Origin:", origin);
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            console.error('Blocked by CORS:', origin);
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true,
-    optionsSuccessStatus: 200
+    origin: 'https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com',
+    credentials: true
 }));
 
 // ✅ Use express.json() for JSON parsing
