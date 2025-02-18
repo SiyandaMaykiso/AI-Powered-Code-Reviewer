@@ -23,7 +23,7 @@ const Navbar = () => {
     <AppBar 
       position="fixed"
       sx={{
-        backgroundColor: darkMode ? "#1e1e1e" : "#1565c0",
+        backgroundColor: darkMode ? "#1e1e1e" : "#004080",
         top: 0,
         left: 0,
         right: 0,

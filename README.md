@@ -16,7 +16,13 @@ This project is part of my portfolio to demonstrate my ability to develop AI-enh
 ### Code Review Display
 ![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_Display_AI_Powered_Code_Reviewer.png)
 
+### Code Review Display Dark Mode
+![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_Display_AI_Powered_Code_Reviewer.png)
+
 ### Code Review History
+![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_History_AI_Powered_Code_Reviewer.png)
+
+### Code Review History Dark Mode
 ![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_History_AI_Powered_Code_Reviewer.png)
 
 ## Features
