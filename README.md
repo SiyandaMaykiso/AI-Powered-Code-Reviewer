@@ -6,7 +6,7 @@ The AI-Powered Code Reviewer is a web application designed to assist developers 
 
 This project is part of my portfolio to demonstrate my ability to develop AI-enhanced applications that improve the software development workflow.
 
-[AI-Powered Code Reviewer](https://ai-powered-code-reviewer.herokuapp.com/)
+[AI-Powered Code Reviewer](https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com)
 
 ## Screenshots
 
@@ -55,7 +55,7 @@ This project is part of my portfolio to demonstrate my ability to develop AI-enh
 
 ### 1. Visit the Application URL
 
-- Access the application in your web browser at: [AI-Powered Code Reviewer](https://ai-powered-code-reviewer.herokuapp.com/).
+- Access the application in your web browser at: [AI-Powered Code Reviewer](https://ai-powered-code-reviewer-c7e564a6a3d0.herokuapp.com).
 
 ### 2. Register or Log In
 
