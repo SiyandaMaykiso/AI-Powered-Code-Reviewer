@@ -11,19 +11,19 @@ This project is part of my portfolio to demonstrate my ability to develop AI-enh
 ## Screenshots
 
 ### Home Page
-![Home Page](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Home_Page_AI_Powered_Code_Reviewer.png)
+![Home Page](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/AI_Powered_Code_Reviewer_Home_Page.png)
 
 ### Code Review Display
-![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_Display_AI_Powered_Code_Reviewer.png)
+![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/AI_Powered_Code_Reviewer_Review_Page.png)
 
 ### Code Review Display Dark Mode
-![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_Display_AI_Powered_Code_Reviewer.png)
+![Code Review Display](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/AI_Powered_Code_Reviewer_Review_Dark_Page%20.png)
 
 ### Code Review History
-![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_History_AI_Powered_Code_Reviewer.png)
+![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/AI_Powered_Code_Reviewer_History_Page.png)
 
 ### Code Review History Dark Mode
-![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/Code_Review_History_AI_Powered_Code_Reviewer.png)
+![Code Review History](https://github.com/SiyandaMaykiso/AI-Powered-Code-Reviewer/blob/main/screenshots/AI_Powered_Code_Reviewer_ReviewHistory_Dark_Page.png)
 
 ## Features
 
